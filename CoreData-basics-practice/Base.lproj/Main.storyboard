@@ -66,16 +66,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="zaU-Ml-wt5">
-                                <rect key="frame" x="20" y="108" width="335" height="30"/>
+                                <rect key="frame" x="16" y="183" width="343" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzx-y3-nJq">
-                                        <rect key="frame" x="0.0" y="0.0" width="49.666666666666664" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="57" height="30"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nbr-Ng-9cT">
-                                        <rect key="frame" x="73.666666666666657" y="0.0" width="261.33333333333337" height="30"/>
+                                        <rect key="frame" x="81" y="0.0" width="262" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -83,16 +83,25 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mO-gb-PwW">
-                                <rect key="frame" x="20" y="158" width="51" height="20.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="223" width="109" height="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JbI-uQ-XrE">
-                                <rect key="frame" x="20" y="198.33333333333337" width="335" height="253"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WDs-xV-Axt">
+                                <rect key="frame" x="16" y="145" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Low"/>
+                                    <segment title="Normal"/>
+                                    <segment title="High"/>
+                                    <segment title="Critical"/>
+                                </segments>
+                            </segmentedControl>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="asdfasdfasdf" translatesAutoresizingMaskIntoConstraints="NO" id="JbI-uQ-XrE">
+                                <rect key="frame" x="16" y="257" width="343" height="259.66666666666674"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="253" id="e03-jd-iOV"/>
+                                    <constraint firstAttribute="height" constant="259.67000000000002" id="w4X-jO-Cra"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -100,15 +109,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="JbI-uQ-XrE" firstAttribute="leading" secondItem="0cg-u6-mKU" secondAttribute="leading" constant="20" id="7nn-Ba-hko"/>
-                            <constraint firstItem="0cg-u6-mKU" firstAttribute="trailing" secondItem="1mO-gb-PwW" secondAttribute="trailing" constant="304" id="7r4-jl-nAX"/>
-                            <constraint firstItem="0cg-u6-mKU" firstAttribute="trailing" secondItem="zaU-Ml-wt5" secondAttribute="trailing" constant="20" id="DSc-PC-wfE"/>
-                            <constraint firstItem="1mO-gb-PwW" firstAttribute="leading" secondItem="0cg-u6-mKU" secondAttribute="leading" constant="20" id="IpG-W2-ALc"/>
-                            <constraint firstItem="1mO-gb-PwW" firstAttribute="top" secondItem="zaU-Ml-wt5" secondAttribute="bottom" constant="20" id="KqX-I7-WDR"/>
-                            <constraint firstItem="0cg-u6-mKU" firstAttribute="trailing" secondItem="JbI-uQ-XrE" secondAttribute="trailing" constant="20" id="W8V-Lb-AYg"/>
-                            <constraint firstItem="zaU-Ml-wt5" firstAttribute="top" secondItem="0cg-u6-mKU" secondAttribute="top" constant="20" id="hxq-ev-wDS"/>
-                            <constraint firstItem="zaU-Ml-wt5" firstAttribute="leading" secondItem="0cg-u6-mKU" secondAttribute="leading" constant="20" id="o6Q-CQ-Bcd"/>
-                            <constraint firstItem="JbI-uQ-XrE" firstAttribute="top" secondItem="1mO-gb-PwW" secondAttribute="bottom" constant="20" id="wm3-7Z-JFJ"/>
+                            <constraint firstItem="0cg-u6-mKU" firstAttribute="trailing" secondItem="WDs-xV-Axt" secondAttribute="trailing" constant="16" id="7rx-p4-seP"/>
+                            <constraint firstItem="JbI-uQ-XrE" firstAttribute="leading" secondItem="0cg-u6-mKU" secondAttribute="leading" constant="16" id="BKp-d1-FwM"/>
+                            <constraint firstItem="1mO-gb-PwW" firstAttribute="leading" secondItem="0cg-u6-mKU" secondAttribute="leading" constant="16" id="Bl2-qM-5aV"/>
+                            <constraint firstItem="zaU-Ml-wt5" firstAttribute="top" secondItem="WDs-xV-Axt" secondAttribute="bottom" constant="10" id="SW0-xb-Ih7"/>
+                            <constraint firstItem="0cg-u6-mKU" firstAttribute="trailing" secondItem="JbI-uQ-XrE" secondAttribute="trailing" constant="16" id="abA-aF-f1x"/>
+                            <constraint firstItem="0cg-u6-mKU" firstAttribute="trailing" secondItem="zaU-Ml-wt5" secondAttribute="trailing" constant="16" id="b9a-H5-uCc"/>
+                            <constraint firstItem="0cg-u6-mKU" firstAttribute="trailing" secondItem="1mO-gb-PwW" secondAttribute="trailing" constant="250" id="dMM-Ry-p9o"/>
+                            <constraint firstItem="WDs-xV-Axt" firstAttribute="leading" secondItem="0cg-u6-mKU" secondAttribute="leading" constant="16" id="fpu-qb-yk9"/>
+                            <constraint firstItem="WDs-xV-Axt" firstAttribute="top" secondItem="0cg-u6-mKU" secondAttribute="top" constant="5" id="nEa-bC-XO0"/>
+                            <constraint firstItem="JbI-uQ-XrE" firstAttribute="top" secondItem="1mO-gb-PwW" secondAttribute="bottom" constant="10" id="ui1-F2-tbw"/>
+                            <constraint firstItem="1mO-gb-PwW" firstAttribute="top" secondItem="zaU-Ml-wt5" secondAttribute="bottom" constant="10" id="xcW-QO-Ehg"/>
+                            <constraint firstItem="zaU-Ml-wt5" firstAttribute="leading" secondItem="0cg-u6-mKU" secondAttribute="leading" constant="16" id="yIQ-0g-73i"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0cg-u6-mKU"/>
                     </view>
@@ -122,6 +134,7 @@
                     <connections>
                         <outlet property="nameTextField" destination="Nbr-Ng-9cT" id="bbm-WB-fWh"/>
                         <outlet property="notesTextView" destination="JbI-uQ-XrE" id="UTR-jg-Hqr"/>
+                        <outlet property="prioritySegmentedControl" destination="WDs-xV-Axt" id="JOh-GR-Not"/>
                         <outlet property="saveButton" destination="jmC-8I-8Oo" id="LrK-Lq-7IP"/>
                     </connections>
                 </viewController>
@@ -133,8 +146,8 @@
         <scene sceneID="CAT-7N-Qgs">
             <objects>
                 <navigationController id="Qfb-oW-dhs" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hcl-iZ-Lly">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Hcl-iZ-Lly">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

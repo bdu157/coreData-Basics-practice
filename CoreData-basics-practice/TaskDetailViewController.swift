@@ -13,6 +13,7 @@ class TaskDetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var notesTextView: UITextView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var prioritySegmentedControl: UISegmentedControl!
     
     //if this gets called before outlets exist then the app will crash so you give isViewLoaded to avoid app to be crashed from not having outlets
     var task: Task? {
@@ -55,15 +56,20 @@ class TaskDetailViewController: UIViewController, UITextFieldDelegate {
             name.isEmpty == false,
             let notes = notesTextView.text else {return}
         
+        let priorityIndex = prioritySegmentedControl.selectedSegmentIndex
+        let priority = TaskPriority.allPriorities[priorityIndex]
+        
         if let task = task {
             //editing a task
             task.name = name
             task.notes = notes
+            task.priority = priority.rawValue  // string = string   priority alone is a case value such as .low or .normal or .high...
         } else {
             //creating a task -- adding new value to this data like adding a value/ element to an empty array???
             let newTask = Task(context: CoreDataStack.shared.mainContext)
             newTask.name = name
             newTask.notes = notes
+            newTask.priority = priority.rawValue
         }
         
         do  {
@@ -77,6 +83,16 @@ class TaskDetailViewController: UIViewController, UITextFieldDelegate {
     
     private func updateViews() {
         guard isViewLoaded == true else {return}
+        
+        //add segmentedControl view based on index number not the string value of the segmentedControl
+        let priority: TaskPriority  //enum type
+        if let taskPriority = task?.priority {
+            priority = TaskPriority(rawValue: taskPriority)!  //you need to use this way because taskPriority is string not enum case such as .low or .normal..... so to get the enum case based on string value you use this way
+        } else {
+            priority = .normal
+        }
+        
+        self.prioritySegmentedControl.selectedSegmentIndex = TaskPriority.allPriorities.firstIndex(of: priority)!
         
         if let task = task {
         self.nameTextField.text = task.name
